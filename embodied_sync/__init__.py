@@ -15,7 +15,7 @@ signatures without costing anything at runtime.
 
 from typing import TYPE_CHECKING, Any
 
-__version__ = "0.0.1.dev0"
+__version__ = "0.1.0"
 
 from embodied_sync.core.sample import Modality, Sample
 

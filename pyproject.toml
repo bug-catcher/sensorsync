@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "embodied-sync"
-version = "0.0.1.dev0"
+version = "0.1.0"
 description = "Compatibility, replay, alignment, and sync-quality validation layer for robot-learning data."
 readme = "README.md"
 requires-python = ">=3.10"
