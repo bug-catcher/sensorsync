@@ -1,0 +1,54 @@
+{
+  "format": "embodied_sync.lsl.replay.v0",
+  "streams": {
+    "eeg": {
+      "modality": "tactile",
+      "source_clock_domain": "lsl",
+      "xdf_clock_offset_ns": -125000,
+      "samples": [
+        {"sequence_id": 0, "acquisition_time_ns": 0,          "receive_time_ns": 500000,   "payload": [0.10, 0.20]},
+        {"sequence_id": 1, "acquisition_time_ns": 10000000,   "receive_time_ns": 10500000, "payload": [0.11, 0.21]},
+        {"sequence_id": 2, "acquisition_time_ns": 20000000,   "receive_time_ns": 20500000, "payload": [0.12, 0.22]},
+        {"sequence_id": 3, "acquisition_time_ns": 30000000,   "receive_time_ns": 30500000, "payload": [0.13, 0.23]},
+        {"sequence_id": 4, "acquisition_time_ns": 40000000,   "receive_time_ns": 40500000, "payload": [0.14, 0.24]},
+        {"sequence_id": 5, "acquisition_time_ns": 50000000,   "receive_time_ns": 50500000, "payload": [0.15, 0.25]},
+        {"sequence_id": 6, "acquisition_time_ns": 60000000,   "receive_time_ns": 60500000, "payload": [0.16, 0.26]},
+        {"sequence_id": 7, "acquisition_time_ns": 70000000,   "receive_time_ns": 70500000, "payload": [0.17, 0.27]},
+        {"sequence_id": 8, "acquisition_time_ns": 80000000,   "receive_time_ns": 80500000, "payload": [0.18, 0.28]},
+        {"sequence_id": 9, "acquisition_time_ns": 90000000,   "receive_time_ns": 90500000, "payload": [0.19, 0.29]},
+        {"sequence_id": 10, "acquisition_time_ns": 100000000, "receive_time_ns": 100500000, "payload": [0.20, 0.30]},
+        {"sequence_id": 11, "acquisition_time_ns": 110000000, "receive_time_ns": 110500000, "payload": [0.21, 0.31]},
+        {"sequence_id": 12, "acquisition_time_ns": 120000000, "receive_time_ns": 120500000, "payload": [0.22, 0.32]},
+        {"sequence_id": 13, "acquisition_time_ns": 130000000, "receive_time_ns": 130500000, "payload": [0.23, 0.33]},
+        {"sequence_id": 14, "acquisition_time_ns": 140000000, "receive_time_ns": 140500000, "payload": [0.24, 0.34]},
+        {"sequence_id": 15, "acquisition_time_ns": 150000000, "receive_time_ns": 150500000, "payload": [0.25, 0.35]},
+        {"sequence_id": 16, "acquisition_time_ns": 160000000, "receive_time_ns": 160500000, "payload": [0.26, 0.36]},
+        {"sequence_id": 17, "acquisition_time_ns": 170000000, "receive_time_ns": 170500000, "payload": [0.27, 0.37]},
+        {"sequence_id": 18, "acquisition_time_ns": 180000000, "receive_time_ns": 180500000, "payload": [0.28, 0.38]},
+        {"sequence_id": 19, "acquisition_time_ns": 190000000, "receive_time_ns": 190500000, "payload": [0.29, 0.39]},
+        {"sequence_id": 20, "acquisition_time_ns": 200000000, "receive_time_ns": 200500000, "payload": [0.30, 0.40]},
+        {"sequence_id": 21, "acquisition_time_ns": 210000000, "receive_time_ns": 210500000, "payload": [0.31, 0.41]},
+        {"sequence_id": 22, "acquisition_time_ns": 220000000, "receive_time_ns": 220500000, "payload": [0.32, 0.42]},
+        {"sequence_id": 23, "acquisition_time_ns": 230000000, "receive_time_ns": 230500000, "payload": [0.33, 0.43]},
+        {"sequence_id": 24, "acquisition_time_ns": 240000000, "receive_time_ns": 240500000, "payload": [0.34, 0.44]},
+        {"sequence_id": 25, "acquisition_time_ns": 250000000, "receive_time_ns": 250500000, "payload": [0.35, 0.45]},
+        {"sequence_id": 26, "acquisition_time_ns": 260000000, "receive_time_ns": 260500000, "payload": [0.36, 0.46]},
+        {"sequence_id": 27, "acquisition_time_ns": 270000000, "receive_time_ns": 270500000, "payload": [0.37, 0.47]},
+        {"sequence_id": 28, "acquisition_time_ns": 280000000, "receive_time_ns": 280500000, "payload": [0.38, 0.48]},
+        {"sequence_id": 29, "acquisition_time_ns": 290000000, "receive_time_ns": 290500000, "payload": [0.39, 0.49]},
+        {"sequence_id": 30, "acquisition_time_ns": 300000000, "receive_time_ns": 300500000, "payload": [0.40, 0.50]}
+      ]
+    },
+    "marker": {
+      "modality": "event",
+      "source_clock_domain": "lsl",
+      "xdf_clock_offset_ns": 250,
+      "samples": [
+        {"sequence_id": 0, "acquisition_time_ns": 0,         "receive_time_ns": 1000000,   "payload": "start"},
+        {"sequence_id": 1, "acquisition_time_ns": 100000000, "receive_time_ns": 101000000, "payload": "tick"},
+        {"sequence_id": 2, "acquisition_time_ns": 200000000, "receive_time_ns": 201000000, "payload": "tick"},
+        {"sequence_id": 3, "acquisition_time_ns": 300000000, "receive_time_ns": 301000000, "payload": "stop"}
+      ]
+    }
+  }
+}

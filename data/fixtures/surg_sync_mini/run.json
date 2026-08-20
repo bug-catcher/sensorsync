@@ -1,0 +1,70 @@
+{
+  "format": "embodied_sync.surg_sync.contract.v0",
+  "streams": {
+    "endoscope": {
+      "modality": "camera",
+      "source_clock_domain": "endoscope_hw",
+      "samples": [
+        {"sequence_id": 0, "acquisition_time_ns": 0,          "receive_time_ns": 8000000,   "payload": {"frame_index": 0, "signature": [0.10, 0.20, 0.30]}},
+        {"sequence_id": 1, "acquisition_time_ns": 33333333,   "receive_time_ns": 41333333,  "payload": {"frame_index": 1, "signature": [0.11, 0.21, 0.31]}},
+        {"sequence_id": 2, "acquisition_time_ns": 66666667,   "receive_time_ns": 74666667,  "payload": {"frame_index": 2, "signature": [0.12, 0.22, 0.32]}},
+        {"sequence_id": 3, "acquisition_time_ns": 100000000,  "receive_time_ns": 108000000, "payload": {"frame_index": 3, "signature": [0.13, 0.23, 0.33]}},
+        {"sequence_id": 4, "acquisition_time_ns": 133333333,  "receive_time_ns": 141333333, "payload": {"frame_index": 4, "signature": [0.14, 0.24, 0.34]}},
+        {"sequence_id": 5, "acquisition_time_ns": 166666667,  "receive_time_ns": 174666667, "payload": {"frame_index": 5, "signature": [0.15, 0.25, 0.35]}},
+        {"sequence_id": 6, "acquisition_time_ns": 200000000,  "receive_time_ns": 208000000, "payload": {"frame_index": 6, "signature": [0.16, 0.26, 0.36]}}
+      ]
+    },
+    "external_camera": {
+      "modality": "camera",
+      "source_clock_domain": "host_mono",
+      "samples": [
+        {"sequence_id": 0, "acquisition_time_ns": 0,          "receive_time_ns": 12000000,  "payload": {"frame_index": 0, "signature": [0.50, 0.60, 0.70]}},
+        {"sequence_id": 1, "acquisition_time_ns": 33333333,   "receive_time_ns": 45333333,  "payload": {"frame_index": 1, "signature": [0.51, 0.61, 0.71]}},
+        {"sequence_id": 2, "acquisition_time_ns": 66666667,   "receive_time_ns": 78666667,  "payload": {"frame_index": 2, "signature": [0.52, 0.62, 0.72]}},
+        {"sequence_id": 3, "acquisition_time_ns": 100000000,  "receive_time_ns": 112000000, "payload": {"frame_index": 3, "signature": [0.53, 0.63, 0.73]}},
+        {"sequence_id": 4, "acquisition_time_ns": 133333333,  "receive_time_ns": 145333333, "payload": {"frame_index": 4, "signature": [0.54, 0.64, 0.74]}},
+        {"sequence_id": 5, "acquisition_time_ns": 166666667,  "receive_time_ns": 178666667, "payload": {"frame_index": 5, "signature": [0.55, 0.65, 0.75]}},
+        {"sequence_id": 6, "acquisition_time_ns": 200000000,  "receive_time_ns": 212000000, "payload": {"frame_index": 6, "signature": [0.56, 0.66, 0.76]}}
+      ]
+    },
+    "kinematics": {
+      "modality": "robot_state",
+      "source_clock_domain": "host_mono",
+      "samples": [
+        {"sequence_id": 0,  "acquisition_time_ns": 0,          "receive_time_ns": 1000000,   "payload": [0.00, 0.10, 0.20, 0.30, 0.40, 0.50, 0.60]},
+        {"sequence_id": 1,  "acquisition_time_ns": 20000000,   "receive_time_ns": 21000000,  "payload": [0.01, 0.11, 0.21, 0.31, 0.41, 0.51, 0.61]},
+        {"sequence_id": 2,  "acquisition_time_ns": 40000000,   "receive_time_ns": 41000000,  "payload": [0.02, 0.12, 0.22, 0.32, 0.42, 0.52, 0.62]},
+        {"sequence_id": 3,  "acquisition_time_ns": 60000000,   "receive_time_ns": 61000000,  "payload": [0.03, 0.13, 0.23, 0.33, 0.43, 0.53, 0.63]},
+        {"sequence_id": 4,  "acquisition_time_ns": 80000000,   "receive_time_ns": 81000000,  "payload": [0.04, 0.14, 0.24, 0.34, 0.44, 0.54, 0.64]},
+        {"sequence_id": 5,  "acquisition_time_ns": 100000000,  "receive_time_ns": 101000000, "payload": [0.05, 0.15, 0.25, 0.35, 0.45, 0.55, 0.65]},
+        {"sequence_id": 6,  "acquisition_time_ns": 120000000,  "receive_time_ns": 121000000, "payload": [0.06, 0.16, 0.26, 0.36, 0.46, 0.56, 0.66]},
+        {"sequence_id": 7,  "acquisition_time_ns": 140000000,  "receive_time_ns": 141000000, "payload": [0.07, 0.17, 0.27, 0.37, 0.47, 0.57, 0.67]},
+        {"sequence_id": 8,  "acquisition_time_ns": 160000000,  "receive_time_ns": 161000000, "payload": [0.08, 0.18, 0.28, 0.38, 0.48, 0.58, 0.68]},
+        {"sequence_id": 9,  "acquisition_time_ns": 180000000,  "receive_time_ns": 181000000, "payload": [0.09, 0.19, 0.29, 0.39, 0.49, 0.59, 0.69]},
+        {"sequence_id": 10, "acquisition_time_ns": 200000000,  "receive_time_ns": 201000000, "payload": [0.10, 0.20, 0.30, 0.40, 0.50, 0.60, 0.70]}
+      ]
+    },
+    "force_sensor": {
+      "modality": "tactile",
+      "source_clock_domain": "force_hw",
+      "samples": [
+        {"sequence_id": 0, "acquisition_time_ns": 0,          "receive_time_ns": 2000000,   "payload": [0.10, 0.15, 0.20]},
+        {"sequence_id": 1, "acquisition_time_ns": 40000000,   "receive_time_ns": 42000000,  "payload": [0.11, 0.16, 0.21]},
+        {"sequence_id": 2, "acquisition_time_ns": 80000000,   "receive_time_ns": 82000000,  "payload": [0.12, 0.17, 0.22]},
+        {"sequence_id": 3, "acquisition_time_ns": 120000000,  "receive_time_ns": 122000000, "payload": [0.13, 0.18, 0.23]},
+        {"sequence_id": 4, "acquisition_time_ns": 160000000,  "receive_time_ns": 162000000, "payload": [0.14, 0.19, 0.24]},
+        {"sequence_id": 5, "acquisition_time_ns": 200000000,  "receive_time_ns": 202000000, "payload": [0.15, 0.20, 0.25]}
+      ]
+    },
+    "phase_events": {
+      "modality": "event",
+      "source_clock_domain": "host_mono",
+      "samples": [
+        {"sequence_id": 0, "acquisition_time_ns": 0,          "receive_time_ns": 500000,   "payload": "prep"},
+        {"sequence_id": 1, "acquisition_time_ns": 75000000,   "receive_time_ns": 75500000, "payload": "grasp"},
+        {"sequence_id": 2, "acquisition_time_ns": 150000000,  "receive_time_ns": 150500000, "payload": "release"},
+        {"sequence_id": 3, "acquisition_time_ns": 200000000,  "receive_time_ns": 200500000, "payload": "cleanup"}
+      ]
+    }
+  }
+}

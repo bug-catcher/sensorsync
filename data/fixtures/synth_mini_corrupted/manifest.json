@@ -1,0 +1,58 @@
+{
+  "corruption": {
+    "profile_path": "configs/corrupt_camera_jitter.yaml",
+    "profile_seed": 1234
+  },
+  "format_version": 0,
+  "streams": {
+    "actions": {
+      "clock_domains": [
+        "host_mono"
+      ],
+      "modality": "action",
+      "sample_count": 10
+    },
+    "audio": {
+      "clock_domains": [
+        "host_mono"
+      ],
+      "modality": "audio",
+      "sample_count": 50
+    },
+    "cam_front": {
+      "clock_domains": [
+        "host_mono"
+      ],
+      "modality": "camera",
+      "sample_count": 29
+    },
+    "cam_wrist": {
+      "clock_domains": [
+        "host_mono"
+      ],
+      "modality": "camera",
+      "sample_count": 30
+    },
+    "events": {
+      "clock_domains": [
+        "host_mono"
+      ],
+      "modality": "event",
+      "sample_count": 4
+    },
+    "robot_state": {
+      "clock_domains": [
+        "host_mono"
+      ],
+      "modality": "robot_state",
+      "sample_count": 250
+    },
+    "tactile": {
+      "clock_domains": [
+        "host_mono"
+      ],
+      "modality": "tactile",
+      "sample_count": 60
+    }
+  }
+}

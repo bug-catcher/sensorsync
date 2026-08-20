@@ -1,0 +1,37 @@
+{
+  "format_version": 0,
+  "frame_count": 6,
+  "ground_truth_missing_count": {},
+  "median_skew_ns": {
+    "actions": 0,
+    "audio": 0,
+    "cam_front": 0,
+    "cam_wrist": 0,
+    "events": 1932468,
+    "robot_state": 0,
+    "tactile": 0
+  },
+  "method": "nearest_neighbor",
+  "missing_count": {
+    "actions": 0,
+    "audio": 0,
+    "cam_front": 0,
+    "cam_wrist": 0,
+    "events": 1,
+    "robot_state": 0,
+    "tactile": 0
+  },
+  "source_run": "data/fixtures/synth_mini",
+  "streams": [
+    "actions",
+    "audio",
+    "cam_front",
+    "cam_wrist",
+    "events",
+    "robot_state",
+    "tactile"
+  ],
+  "target_period_ns": 100000000,
+  "target_rate_hz": 10.0,
+  "type": "aligned_episode"
+}

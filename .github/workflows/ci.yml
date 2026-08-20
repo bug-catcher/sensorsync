@@ -1,0 +1,46 @@
+# Core CI: base+dev install only, single fast job (D-0012). No optional
+# extras, no external datasets — those test tiers skip by design
+# (TESTING_STRATEGY.md). A version matrix is deferred until the integration
+# frameworks (MCAP/LeRobot/LSL) determine which Pythons we must support.
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install base + dev extras only
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e ".[dev]"
+      - name: pytest
+        run: pytest
+      - name: ruff
+        run: ruff check .
+      - name: mypy
+        run: mypy
+
+  license-scan:
+    # Separate job from the fast base+dev test job above: this one installs
+    # every extra so the transitive scan actually covers every optional
+    # integration, not just numpy+pyyaml (D2, DECISIONS.md D-0042).
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install every extra
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e ".[full,dev]"
+      - name: Check for copyleft dependencies
+        run: python scripts/check_licenses.py

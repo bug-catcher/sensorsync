@@ -1,0 +1,17 @@
+# Corruption profile: camera receive-time jitter (schema v0, D-0009/D-0010).
+# Loaded/validated by embodied_sync.corrupt.load_profile, applied by
+# apply_profile, and exercised end-to-end through `embsync corrupt`.
+format_version: 0
+seed: 1234
+corruptions:
+  - stream: cam_front
+    kind: jitter            # adds noise to receive_time_ns only
+    distribution: gaussian
+    std_ms: 8.0
+    clip_ms: 30.0
+  - stream: cam_front
+    kind: dropped_frames
+    probability: 0.02       # per-sample drop probability
+  - stream: cam_wrist
+    kind: fixed_latency
+    offset_ms: 45.0         # added to receive_time_ns

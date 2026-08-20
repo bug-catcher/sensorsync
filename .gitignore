@@ -1,0 +1,48 @@
+# External datasets: manually provided, never committed
+data/external/
+
+# Generated outputs (root-anchored so embodied_sync/reports/ stays tracked)
+/runs/
+/episodes/
+/reports/
+/out/
+
+# Self-contained inspection pages embed dataset frames and audio. They are
+# reproducible review artefacts and may not be redistributable with the source.
+/experiments/results/*.html
+
+# Local binary artifacts
+*.deb
+docs/research/papers/*.pdf
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.eggs/
+
+# Environments
+.venv/
+.codex_deps/
+venv/
+.env
+
+# Tooling caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+
+# Notebooks
+.ipynb_checkpoints/
+
+# Notebook-generated outputs
+examples/notebooks/output/

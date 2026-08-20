@@ -1,0 +1,36 @@
+#!/usr/bin/env bash
+# Blocks a merge that would carry a copyleft dependency into main's history
+# (D2, DECISIONS.md D-0042). Runs only when `pyproject.toml` is part of the
+# merge, so ordinary merges pay nothing.
+#
+# This only sees direct dependency declarations (scripts/check_licenses.py
+# --pyproject queries PyPI per named package, no install) — it exists to
+# catch the mistake at the door, before it is in history and a revert means
+# rewriting a shared branch. It is not a replacement for the `license-scan`
+# CI job, which installs every extra and scans the fully resolved transitive
+# environment; that stays the authoritative check.
+#
+# Enable with: git config core.hooksPath .githooks
+
+set -euo pipefail
+
+repo_root="$(git rev-parse --show-toplevel)"
+cd "$repo_root"
+
+# By the time pre-merge-commit runs, the merge is already applied to the
+# index/working tree but HEAD is still the pre-merge tip -- so this is the
+# merge's own diff, the same trick `git commit`'s pre-commit hook relies on.
+# (MERGE_HEAD looks like the obvious ref to diff against instead, but is not
+# reliably resolvable from this hook on git 2.43's ort strategy; this does
+# not depend on it.) Capture into a variable rather than piping into a
+# negated `if`: under `set -e`, a command's exit status is not fatal inside
+# an `if` condition, so `git diff | grep` failing (transient error, not "no
+# match") would otherwise be silently read as "pyproject.toml unchanged" and
+# skip the check entirely -- exactly the wrong failure mode for a gate.
+changed_files="$(git diff --cached --name-only HEAD)"
+
+if ! grep -qx "pyproject.toml" <<<"$changed_files"; then
+    exit 0
+fi
+
+python3 scripts/check_licenses.py --pyproject

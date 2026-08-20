@@ -1,0 +1,31 @@
+{
+  "dropped": {
+    "cam_front": [
+      {
+        "acquisition_time_ns": 933333333,
+        "modality": "camera",
+        "payload": {
+          "frame_index": 28,
+          "signature": [
+            0.862629,
+            0.987171,
+            0.978104,
+            0.836656
+          ]
+        },
+        "payload_ref": null,
+        "quality_flags": [
+          "synthetic"
+        ],
+        "receive_time_ns": 929962135,
+        "sequence_id": 28,
+        "source_clock_domain": "host_mono",
+        "stream_name": "cam_front"
+      }
+    ]
+  },
+  "format_version": 0,
+  "profile_path": "configs/corrupt_camera_jitter.yaml",
+  "profile_seed": 1234,
+  "type": "corruption_ground_truth"
+}

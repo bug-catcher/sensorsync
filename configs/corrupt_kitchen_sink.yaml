@@ -1,0 +1,37 @@
+# Kitchen-sink corruption profile: every v0 corruption kind in one file.
+#
+# Applied by `embsync corrupt` in order; used as-is by the integration test
+# `tests/test_kitchen_sink.py` which walks the full Milestone 1 pipeline
+# (synth → corrupt → align → report). Each corruption is aimed at a stream
+# with enough headroom that it fires without wiping the stream out.
+format_version: 0
+seed: 12345
+corruptions:
+  - stream: cam_wrist
+    kind: fixed_latency
+    offset_ms: 15.0
+  - stream: cam_front
+    kind: jitter
+    distribution: gaussian
+    std_ms: 5.0
+    clip_ms: 20.0
+  - stream: cam_front
+    kind: dropped_frames
+    probability: 0.08
+  - stream: robot_state
+    kind: clock_drift
+    drift_ppm: 50.0
+  - stream: cam_wrist
+    kind: burst_stall
+    count: 2
+    stall_ms: 20.0
+  - stream: tactile
+    kind: duplicate_samples
+    probability: 0.05
+  - stream: audio
+    kind: non_monotonic
+    count: 2
+  - stream: robot_state
+    kind: missing_interval
+    start_ms: 200.0
+    duration_ms: 80.0
