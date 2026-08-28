@@ -376,7 +376,7 @@ redistributable fixtures belong in [`data/fixtures/`](data/fixtures).
 
 ## Current scope
 
-We would rather support fewer formats well than claim a long adapter list.
+Our philosophy is to support fewer formats well than claim a long adapter list.
 Today you can use the core run and episode formats, corruption engine,
 recorded and live aligners, `SyncSession`, clock calibration, reports, and
 automatic dataset import.
@@ -403,9 +403,8 @@ third-party datasets.
 
 ## License and contributing
 
-`embodied-sync` is MIT licensed. All dependencies must use compatible
-licenses, and CI checks the full environment. To run the same check locally,
-install `.[full,dev]` and run `python scripts/check_licenses.py`.
+All dependencies must use compatible licenses, and CI checks the full environment.
+To run the same check locally, install `.[full,dev]` and run `python scripts/check_licenses.py`.
 
 Contributions are welcome. Start with [`ARCHITECTURE.md`](ARCHITECTURE.md) for
 the package boundaries and [`TESTING_STRATEGY.md`](TESTING_STRATEGY.md) for the
