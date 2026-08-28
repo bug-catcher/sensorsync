@@ -2,9 +2,9 @@
 
 **Know whether your sensors agree before your policy pays the price.**
 
-Robot-learning datasets rarely arrive on one clean clock. Cameras run at one
-rate, robot state at another, packets show up late, and a device reconnect can
-quietly reset its timebase. When you are trying to finish an experiment, the
+Often, robot-learning sensor streams or datasets need to be sychronized. Cameras run at one
+rate, robot state at another, packets arrive late, and a device reconnect can
+silently reset its time offset. When you are trying to finish an experiment, the
 last thing you need is to discover after training that the observations were
 paired differently on the robot than they were in the dataset.
 
@@ -41,7 +41,13 @@ real LeRobot import. For a version with plain text output, use
 
 ## Install
 
-The package is not on PyPI yet. From a checkout:
+The package is on PyPI - the easiest way to start using is the latest official pip wheel:
+
+```bash
+pip install embodied-sync
+```
+
+In case you want to customize or install from source:
 
 ```bash
 pip install -e .          # core types, alignment, calibration, and live sessions
@@ -60,7 +66,7 @@ pip install -e ".[umi]"
 pip install -e ".[rerun]"
 ```
 
-The base install stays deliberately small: `numpy` and `pyyaml` only.
+The base install is designed to be deliberately small: `numpy` and `pyyaml` only.
 
 ## Align a recorded run
 
@@ -363,7 +369,8 @@ pip install -e ".[mcap]"
 pytest -q -m external_data tests/test_adapter_mcap.py
 ```
 
-Keep downloaded
+See [`manual_dataset_setup.md`](docs/user/manual_dataset_setup.md) and
+[`TESTING_STRATEGY.md`](TESTING_STRATEGY.md) for details. Keep downloaded
 datasets, archives, installers, and generated outputs out of git; only small,
 redistributable fixtures belong in [`data/fixtures/`](data/fixtures).
 
@@ -391,14 +398,15 @@ third-party datasets.
 | [`docs/concepts/`](docs/concepts) | Timing, clock-domain, and alignment concepts |
 | [`configs/`](configs) | Ready-to-run corruption and alignment configurations |
 | [`tests/`](tests) | Deterministic unit, contract, and external-data tests |
-| [`pyproject.toml`](pyproject.toml) | Package metadata and optional dependencies |
-| [`configs/`](configs) | Ready-to-run corruption configurations |
+| [`ARCHITECTURE.md`](ARCHITECTURE.md) | Package layout and data-model decisions |
+| [`TESTING_STRATEGY.md`](TESTING_STRATEGY.md) | Test tiers, skip policy, and determinism rules |
 
 ## License and contributing
 
-`embodied-sync` is licensed under Apache-2.0. All dependencies must use compatible
+`embodied-sync` is MIT licensed. All dependencies must use compatible
 licenses, and CI checks the full environment. To run the same check locally,
 install `.[full,dev]` and run `python scripts/check_licenses.py`.
 
-Contributions are welcome. The test suite is deterministic and is designed to
-run without downloading external datasets.
+Contributions are welcome. Start with [`ARCHITECTURE.md`](ARCHITECTURE.md) for
+the package boundaries and [`TESTING_STRATEGY.md`](TESTING_STRATEGY.md) for the
+project's determinism, fixture, and external-data expectations.
