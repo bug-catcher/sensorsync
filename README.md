@@ -409,3 +409,7 @@ To run the same check locally, install `.[full,dev]` and run `python scripts/che
 Contributions are welcome. Start with [`ARCHITECTURE.md`](ARCHITECTURE.md) for
 the package boundaries and [`TESTING_STRATEGY.md`](TESTING_STRATEGY.md) for the
 project's determinism, fixture, and external-data expectations.
+
+The public docs landing page is available at [`docs/README.md`](docs/README.md),
+with the same content published at the
+[documentation site](https://anicut-ai.github.io/embodied-sync/).

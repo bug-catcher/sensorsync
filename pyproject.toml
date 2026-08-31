@@ -17,11 +17,18 @@ classifiers = [
   "Programming Language :: Python :: 3",
   "Topic :: Scientific/Engineering",
 ]
+
 # Keep the base install light. Anything heavier goes behind extras (D-0001).
 dependencies = [
   "numpy>=1.24",
   "pyyaml>=6.0",
 ]
+
+[project.urls]
+Homepage = "https://anicut-ai.github.io/embodied-sync/"
+Documentation = "https://anicut-ai.github.io/embodied-sync/"
+Source = "https://github.com/anicut-ai/embodied-sync"
+Issues = "https://github.com/anicut-ai/embodied-sync/issues"
 
 [project.optional-dependencies]
 # Layered on purpose (D-0001). The base install is numpy + pyyaml and
